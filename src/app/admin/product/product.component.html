@@ -5,17 +5,15 @@
     <mat-card-content>
         <div class="uk-flex">
             <span class="uk-width-expand"></span>
-            <button mat-flat-button color="primary">Tambah Produk</button>
+            <button mat-flat-button color="primary" (click)="productDetail({},-1)">Tambah Produk</button>
         </div>
         <table class="uk-table uk-table-middle uk-table-divider">
             <thead>                
                 <th>No</th>
-                <th>Judul</th>
-                <th>Penulis</th>
-                <th>Penerbit</th>
-                <th>Tahun Terbit</th>
-                <th>ISBN</th>
-                <th>Harga</th>
+                <th>Nama</th>
+                <th>Kode</th>
+                <th>Kategori</th>
+                <th>Jumlah</th>
                 <th align="right">#</th>
             </thead>
         </table>
