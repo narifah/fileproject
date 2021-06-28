@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialDesign } from '../material/material';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     component:AdminComponent,
     children:[
       {
-        path:'dashboard',
-        component:DashboardComponent
+        path:'home',
+        component:HomeComponent
       },
       {
         path:'product',
@@ -24,7 +24,7 @@ const routes: Routes = [
       {
         path:'',
         pathMatch:'full',
-        redirectTo:'/admin/dashboard'
+        redirectTo:'/admin/home'
       }
     ]
   }
@@ -33,9 +33,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AdminComponent,
-    DashboardComponent,
     ProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

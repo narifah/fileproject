@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.title='Product';
+    this.title='PRODUCT';
   }
 
 
