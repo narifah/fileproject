@@ -1,4 +1,7 @@
-<mat-card>
+<div *ngIf="loading" style="height: 300px" class="uk-flex uk-flex-center uk-flex-middle">
+    <mat-spinner></mat-spinner>
+</div>
+<mat-card *ngIf="!loading">
     <mat-card-header>
         <mat-card-title>{{title}}</mat-card-title>
     </mat-card-header>
@@ -14,7 +17,21 @@
                 <th>Brand</th>
                 <th>Kode</th>
                 <th>Harga</th>
+                <th align="right"></th>
             </thead>
+            <tbody>
+                <tr *ngFor="let camera of cameras; let idx=index">
+                    <td>{{idx+1}}</td>
+                    <td>{{camera.nama}}</td>
+                    <td>{{camera.brand}}</td>
+                    <td>{{camera.kode}}</td>
+                    <td>{{camera.harga}}</td>
+                    <td align="right">
+                        <button mat-button color="primary" (click)="productDetail(camera, idx)">Edit</button>
+                        <button mat-button color="warn" (click)="deleteProduct(camera.id, idx)"[disabled]="loadingDelete[idx]">{{loadingDelete[idx] ? 'Deleting..':'Delete'}}</button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </mat-card-content>
 </mat-card>

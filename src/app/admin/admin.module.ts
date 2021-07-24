@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { KatalogComponent } from './katalog/katalog.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path:'home',
         component:HomeComponent
+      },
+      {
+        path:'katalog',
+        component:KatalogComponent
       },
       {
         path:'product',
@@ -35,7 +40,8 @@ const routes: Routes = [
     AdminComponent,
     ProductComponent,
     ProductDetailComponent,
-    HomeComponent
+    HomeComponent,
+    KatalogComponent
   ],
   imports: [
     CommonModule,

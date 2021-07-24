@@ -7,12 +7,15 @@
     <mat-card-content>
       <mat-form-field appearance="outline" class="uk-width-1-1">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="email@gmail.com">
+        <input matInput placeholder="email@gmail.com" [(ngModel)]="user.email">
       </mat-form-field>
       
       <mat-form-field class="uk-width-1-1" appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="your password" type="password">
+        <input matInput [type]="hide ? 'password':'text'"placeholder="your password" [(ngModel)]="user.password">
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+        </button>
       </mat-form-field>
       
       <div class="uk-flex uk-flex-right">
@@ -20,7 +23,7 @@
           <button mat-button routerLink="/login">I have an account</button>
           <button mat-button routerLink="/forgot">Forgot</button>
         </div>
-        <button mat-raised-button color="primary" routerLink="/admin">REGISTER</button>
+        <button mat-raised-button color="primary" (click)="register()" [disabled]="loading">{{ loading ? 'TUNGGU':'REGISTER'}}</button>
       </div>
 
     </mat-card-content>

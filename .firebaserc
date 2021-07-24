@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "katalog-kamera": {
+      "hosting": {
+        "nar-project": [
+          "katalog-kamera"
+        ]
+      }
+    }
+  }
+}

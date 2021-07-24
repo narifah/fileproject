@@ -8,7 +8,12 @@ import { RegisterComponent } from './auth/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesign } from './material/material';
 import { ForgotComponent } from './auth/forgot/forgot.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from '../environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,11 @@ import { ForgotComponent } from './auth/forgot/forgot.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialDesign
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule,
+    MaterialDesign,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
